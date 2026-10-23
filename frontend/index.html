@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Performance Prediction System | College PBL Project</title>
+  <meta name="description" content="Machine Learning based Student Performance Prediction System predicting Pass/Fail outcomes with diagnostic analysis and personalized improvement suggestions.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <div class="brand-wrapper">
+        <div class="brand-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+            <path d="M6 6h10"/>
+            <path d="M6 10h10"/>
+            <path d="M6 14h6"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>Student Performance Prediction System</h1>
+          <span class="brand-subtitle">Project-Based Learning (PBL) System</span>
+        </div>
+      </div>
+
+      <div class="nav-badges">
+        <span class="badge badge-pbl">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          PBL Academic Project
+        </span>
+        <span class="badge badge-status" id="backendStatusBadge">
+          <span class="pulse-dot"></span>
+          <span>UI Ready (Step 1)</span>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Application Container -->
+  <main class="app-container">
+
+    <!-- Hero / Project Overview Section -->
+    <header class="hero-section">
+      <h2 class="hero-title">
+        Predict Academic Outcomes with <span class="gradient-text">Machine Learning Intelligence</span>
+      </h2>
+      <p class="hero-description">
+        An academic decision-support platform designed to assess student risk, predict <strong>Pass/Fail</strong> probability based on behavioral and academic factors, pinpoint deficiency areas, and deliver personalized actionable improvement recommendations.
+      </p>
+    </header>
+
+    <!-- Key Factor Highlights Grid -->
+    <section class="factors-grid" aria-label="Key Performance Factors">
+      <div class="factor-card">
+        <div class="factor-icon-wrapper factor-study">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="factor-info">
+          <h4>Study Hours</h4>
+          <p>Daily dedicated hours</p>
+        </div>
+      </div>
+
+      <div class="factor-card">
+        <div class="factor-icon-wrapper factor-attendance">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+        </div>
+        <div class="factor-info">
+          <h4>Attendance</h4>
+          <p>Classroom presence (%)</p>
+        </div>
+      </div>
+
+      <div class="factor-card">
+        <div class="factor-icon-wrapper factor-score">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7.5"/><path d="M14 14.66V17c0 .55.45 1 1 1h1.5"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        </div>
+        <div class="factor-info">
+          <h4>Previous Score</h4>
+          <p>Prior exam record (/100)</p>
+        </div>
+      </div>
+
+      <div class="factor-card">
+        <div class="factor-icon-wrapper factor-assignments">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        </div>
+        <div class="factor-info">
+          <h4>Assignments</h4>
+          <p>Submissions completed</p>
+        </div>
+      </div>
+
+      <div class="factor-card">
+        <div class="factor-icon-wrapper factor-participation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="factor-info">
+          <h4>Participation</h4>
+          <p>In-class engagement</p>
+        </div>
+      </div>
+
+      <div class="factor-card">
+        <div class="factor-icon-wrapper factor-sleep">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </div>
+        <div class="factor-info">
+          <h4>Sleep Hours</h4>
+          <p>Nightly rest balance</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workspace Two-Column Grid -->
+    <div class="workspace-grid">
+
+      <!-- Left Column: Student Input Form -->
+      <section class="glass-card" aria-labelledby="formHeading">
+        <div class="card-header">
+          <div class="card-title-group">
+            <div class="card-title-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="card-title" id="formHeading">Student Assessment Input</h3>
+              <p class="card-subtitle">Enter academic factors to evaluate performance outcome</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Demo Presets -->
+        <div class="preset-bar">
+          <span class="preset-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            Quick Presets:
+          </span>
+          <div class="preset-buttons">
+            <button type="button" class="preset-btn preset-pass" data-preset="high">High Performer</button>
+            <button type="button" class="preset-btn" data-preset="average">Average Student</button>
+            <button type="button" class="preset-btn preset-risk" data-preset="risk">At-Risk Student</button>
+          </div>
+        </div>
+
+        <!-- The Input Form -->
+        <form id="studentPredictionForm" class="student-form" novalidate>
+          <div class="form-grid">
+
+            <!-- 1. Study Hours -->
+            <div class="form-group" id="group-studyHours">
+              <label class="form-label" for="studyHours">
+                <span class="label-title">
+                  Study Hours
+                </span>
+                <span class="label-hint">Hours / Day (0 - 24)</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </span>
+                <input 
+                  type="number" 
+                  id="studyHours" 
+                  name="studyHours" 
+                  class="form-input" 
+                  placeholder="e.g. 5.5" 
+                  min="0" 
+                  max="24" 
+                  step="0.5"
+                  required
+                >
+              </div>
+              <span class="error-message"></span>
+            </div>
+
+            <!-- 2. Attendance -->
+            <div class="form-group" id="group-attendance">
+              <label class="form-label" for="attendance">
+                <span class="label-title">
+                  Attendance
+                </span>
+                <span class="label-hint">Percentage (0 - 100%)</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+                </span>
+                <input 
+                  type="number" 
+                  id="attendance" 
+                  name="attendance" 
+                  class="form-input" 
+                  placeholder="e.g. 85" 
+                  min="0" 
+                  max="100" 
+                  step="1"
+                  required
+                >
+              </div>
+              <span class="error-message"></span>
+            </div>
+
+            <!-- 3. Previous Score -->
+            <div class="form-group" id="group-previousScore">
+              <label class="form-label" for="previousScore">
+                <span class="label-title">
+                  Previous Score
+                </span>
+                <span class="label-hint">Marks (0 - 100)</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                </span>
+                <input 
+                  type="number" 
+                  id="previousScore" 
+                  name="previousScore" 
+                  class="form-input" 
+                  placeholder="e.g. 72" 
+                  min="0" 
+                  max="100" 
+                  step="1"
+                  required
+                >
+              </div>
+              <span class="error-message"></span>
+            </div>
+
+            <!-- 4. Assignments Completed -->
+            <div class="form-group" id="group-assignmentsCompleted">
+              <label class="form-label" for="assignmentsCompleted">
+                <span class="label-title">
+                  Assignments Completed
+                </span>
+                <span class="label-hint">Count (0 - 50)</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </span>
+                <input 
+                  type="number" 
+                  id="assignmentsCompleted" 
+                  name="assignmentsCompleted" 
+                  class="form-input" 
+                  placeholder="e.g. 12" 
+                  min="0" 
+                  max="50" 
+                  step="1"
+                  required
+                >
+              </div>
+              <span class="error-message"></span>
+            </div>
+
+            <!-- 5. Participation -->
+            <div class="form-group" id="group-participation">
+              <label class="form-label" for="participation">
+                <span class="label-title">
+                  Participation
+                </span>
+                <span class="label-hint">Classroom Level</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </span>
+                <select id="participation" name="participation" class="form-select" required>
+                  <option value="" disabled selected>Select participation level</option>
+                  <option value="High">High (Active & Regular)</option>
+                  <option value="Medium">Medium (Occasional)</option>
+                  <option value="Low">Low (Passive / Rare)</option>
+                </select>
+              </div>
+              <span class="error-message"></span>
+            </div>
+
+            <!-- 6. Sleep Hours -->
+            <div class="form-group" id="group-sleepHours">
+              <label class="form-label" for="sleepHours">
+                <span class="label-title">
+                  Sleep Hours
+                </span>
+                <span class="label-hint">Hours / Night (0 - 24)</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                </span>
+                <input 
+                  type="number" 
+                  id="sleepHours" 
+                  name="sleepHours" 
+                  class="form-input" 
+                  placeholder="e.g. 7.5" 
+                  min="0" 
+                  max="24" 
+                  step="0.5"
+                  required
+                >
+              </div>
+              <span class="error-message"></span>
+            </div>
+
+          </div>
+
+          <!-- Actions -->
+          <div class="form-actions">
+            <button type="submit" id="btnPredict" class="btn btn-primary">
+              <span class="spinner"></span>
+              <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"/>
+                <path d="m14 7 3 3"/>
+                <path d="M5 6v4"/>
+                <path d="M19 14v4"/>
+                <path d="M10 2v2"/>
+                <path d="M7 8H3"/>
+                <path d="M21 16h-4"/>
+                <path d="M11 3H9"/>
+              </svg>
+              <span class="btn-text">Predict Performance</span>
+            </button>
+            <button type="button" id="btnReset" class="btn btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+              </svg>
+              Reset
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Right Column: Performance Prediction & Insights Display -->
+      <section class="glass-card" aria-labelledby="resultsHeading">
+        <div class="card-header">
+          <div class="card-title-group">
+            <div class="card-title-icon" style="background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="card-title" id="resultsHeading">Performance Analysis</h3>
+              <p class="card-subtitle">Outcome classification & personalized recommendations</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Results Container -->
+        <div id="resultsContainer">
+          <!-- Populated dynamically via UIComponents (Empty State, Pending Scaffold, or ML Results) -->
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p><strong>Student Performance Prediction System</strong> — Academic Project-Based Learning (PBL)</p>
+      <div class="footer-meta">
+        <span>Frontend Architecture: Modular HTML5 / Vanilla CSS / ES6</span>
+        <span>•</span>
+        <span>ML Pipeline: Python / Scikit-Learn (Step 2 Integration)</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Module Script -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

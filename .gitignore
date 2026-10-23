@@ -1,0 +1,79 @@
+﻿# ===================================================================
+# Student Performance Prediction - .gitignore
+# ===================================================================
+
+# Python bytecode & caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+
+# Package / distribution artifacts
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+wheels/
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variable files  (NEVER commit secrets)
+.env
+.env.*
+*.env
+!.env.example
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+logs/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.tox/
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Local development helpers
+*.local
+*.bak
+
+# OS artifacts
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# NOTE: backend/model/*.joblib and backend/data/*.csv are intentionally
+# included in git so Render can access them if the build step fails.
+# The build step (python backend/train_model.py) will always regenerate
+# the model artifacts fresh on Render anyway.
